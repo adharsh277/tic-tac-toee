@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 40px; }
+    table { margin: auto; }
+    td { width: 60px; height: 60px; font-size: 30px; text-align: center; border: 2px solid #000; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <table>
+    <tr><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td></tr>
+    <tr><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td></tr>
+    <tr><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td><td onclick="makeMove(this)"></td></tr>
+  </table>
+  <h2 id="status"></h2>
+  <script>
+    let currentPlayer = "X";
+    function makeMove(cell) {
+      if (cell.innerHTML === "") {
+        cell.innerHTML = currentPlayer;
+        if (checkWin()) {
+          document.getElementById("status").innerText = `${currentPlayer} wins!`;
+          document.querySelectorAll("td").forEach(td => td.onclick = null);
+        } else {
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+        }
+      }
+    }
+    function checkWin() {
+      const cells = Array.from(document.querySelectorAll("td")).map(td => td.innerHTML);
+      const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+      return wins.some(([a,b,c]) => cells[a] && cells[a] === cells[b] && cells[b] === cells[c]);
+    }
+  </script>
+</body>
+</html>
