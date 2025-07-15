@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tic-tac-web-service
+spec:
+  type: LoadBalancer  # Use NodePort for Minikube
+  selector:
+    app: tic-tac-web
+  ports:
+    - port: 80
+      targetPort: 5000

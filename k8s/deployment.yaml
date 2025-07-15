@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tic-tac-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tic-tac-web
+  template:
+    metadata:
+      labels:
+        app: tic-tac-web
+    spec:
+      containers:
+      - name: tic-tac-web
+        image: aadhi160/tic-tac-web:latest
+        ports:
+        - containerPort: 5000
