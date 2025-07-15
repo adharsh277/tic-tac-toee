@@ -15,6 +15,7 @@ jobs:
 
     - name: Set up Kubeconfig
       run: |
+        mkdir -p $HOME/.kube
         echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
 
     - name: Deploy manifests to AKS
