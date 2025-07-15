@@ -13,11 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Kubeconfig
+    - name: Create .kube directory
+      run: mkdir -p ~/.kube
+
+    - name: Decode and Set Kubeconfig
       run: |
-        mkdir -p $HOME/.kube
-        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > ~/.kube/config
 
     - name: Deploy manifests to AKS
-      run: |
-        kubectl apply -f k8s/
+      run: kubectl apply -f k8s/
