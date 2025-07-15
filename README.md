@@ -79,9 +79,6 @@ Once deployed:
 kubectl get services
 
 ---
-
-
-
 🧠 Learning Outcome
 Full DevOps workflow using GitHub Actions
 
