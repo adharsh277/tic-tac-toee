@@ -80,13 +80,6 @@ kubectl get services
 
 ---
 
-## 📸 Screenshots
-
-### 🖼️ Deployement Screen
-![Deployment Screen](images/Screenshot1.png.png)
-
-### 🧪 Game Interface
-![Game Interface](images/Screenshot\ 2.png.png)
 
 
 🧠 Learning Outcome
