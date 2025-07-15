@@ -1,34 +1,112 @@
-# Tic-Tac-Toe
+# ♟️ Tic-Tac-Toe Web App: CI/CD + AKS Deployment
 
-This repository contains python based interactive Tic-Tac-Toe game.
+![Azure](https://img.shields.io/badge/Azure-Kubernetes-blue?logo=azure-kubernetes-service)
+![Docker](https://img.shields.io/badge/Docker-Containerized-green?logo=docker)
+![GitHub Actions](https://img.shields.io/badge/CI/CD-Automation-orange?logo=githubactions)
+![Status](https://img.shields.io/badge/Status-Deployed-brightgreen)
 
-## Running Tic-Tac-Toe:
+## 📌 Project Overview
 
-```
-git clone https://github.com/aqeelanwar/Tic-Tac-Toe.git
-cd Tic-Tac-Toe
-python main.py
-```
+This project demonstrates a **complete DevOps lifecycle** for a Python-based Tic-Tac-Toe game:
 
-<p align="center">
-<img src="/images/preview.gif">
-</p>
+- 🐍 Python Web App (`Flask`)
+- 🐳 Dockerized for containerization
+- 🔁 GitHub Actions for CI/CD
+- ☸️ Deployed to **Azure Kubernetes Service (AKS)**
+- 🌐 Accessed via a LoadBalancer service
 
-## Screenshots
-<p align="center">
-<img width=1000 src="/images/screenshot.png">
+---
 
-</p>
+## 🚀 Features
 
-## Controls
-1. Player X starts the game
-2. Click on each grid to place symbol
-3. The result of the game is displayed at the end of the game
-4. A track of player scores is maintained
-5. Click anywhere on the result screen to play again
+- ✅ Modern DevOps Workflow with CI/CD
+- ✅ Docker image build & push using GitHub Actions
+- ✅ AKS deployment with auto-triggered GitHub Action
+- ✅ Scalable microservice architecture
+- ✅ Clean folder structure with YAML, Docker, and app files
 
 
+## 🧱 Tech Stack
 
-## Author
-[Aqeel Anwar](https://www.prism.gatech.edu/~manwar8)
+| Layer              | Tools / Services                      |
+|--------------------|----------------------------------------|
+| Language           | Python 3.10                            |
+| Web Framework      | Flask                                  |
+| Containerization   | Docker                                 |
+| CI/CD Pipeline     | GitHub Actions                         |
+| Kubernetes Cluster | Azure Kubernetes Service (AKS)         |
+| Hosting            | Azure Cloud                            |
+
+
+
+## ⚙️ CI/CD Workflow
+
+### 🔨 Build & Push Docker Image
+
+- Runs on every push to `main`
+- Builds Docker image
+- Pushes to Docker Hub using `DOCKER_USERNAME` secret
+
+### 🚀 Deploy to AKS
+
+- Runs automatically after image build
+- Uses `KUBE_CONFIG_DATA` secret to connect to AKS
+- Applies all YAMLs in the `k8s/` folder
+
+---
+ ## Service exposes the app on an external IP:
+
+cpp
+Copy
+Edit
+http://4.255.100.81/
+
+## 🔐 Secrets Used
+
+| Secret Name          | Description                                    |
+|----------------------|------------------------------------------------|
+| `DOCKER_USERNAME`    | Your Docker Hub username                      |
+| `DOCKER_PASSWORD`    | Docker Hub password or access token            |
+| `KUBE_CONFIG_DATA`   | Base64-encoded `~/.kube/config` from AKS       |
+
+---
+
+## ✅ Deployment Access
+
+Once deployed:
+
+`bash
+kubectl get services
+
+---
+
+## 📸 Screenshots
+
+### 🖼️ Deployement Screen
+![Deployment Screen](images/Screenshot1.png.png)
+
+### 🧪 Game Interface
+![Game Interface](images/Screenshot\ 2.png.png)
+
+
+🧠 Learning Outcome
+Full DevOps workflow using GitHub Actions
+
+Working with AKS clusters and service exposure
+
+Dockerizing Python GUI/Web apps
+
+Real-time CI/CD pipelines with secret handling
+
+🙌 Acknowledgements
+Original project by aqeelanwar
+
+DevOps setup & deployment customized and executed by adharsh277 ✨
+
+## 📣 Contact
+
+📧 [Adharsh](https://www.linkedin.com/in/adharsh277/) – LinkedIn  
+🌍 [Adharsh](https://github.com/adharsh277) – GitHub
+
+
 
