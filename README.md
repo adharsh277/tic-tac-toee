@@ -7,7 +7,6 @@
 
 ## 📌 Project Overview
 
-
 This project demonstrates a **complete DevOps lifecycle** for a Python-based Tic-Tac-Toe game:
 
 - 🐍 Python Web App (`Flask`)
